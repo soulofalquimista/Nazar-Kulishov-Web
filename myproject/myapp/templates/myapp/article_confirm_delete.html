@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Видалити статтю</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}">
+    <style>
+        /* Основні стилі сторінки */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Стилі контейнера */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Стилі заголовка */
+        #title3 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #f44336;
+            padding-bottom: 10px;
+        }
+
+        /* Стилі абзацу */
+        #p3 {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Стилі форми */
+        #form3 {
+            margin-bottom: 20px;
+        }
+
+        /* Стилі кнопки */
+        #button3 {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #button3:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Стилі посилання */
+        #a3 {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        #a3:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Адаптивність для мобільних пристроїв */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            #title3 {
+                font-size: 24px;
+            }
+
+            #p3 {
+                font-size: 16px;
+            }
+
+            #button3 {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            #a3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="title3">Видалити статтю</h1>
+    <p id="p3">Ви впевнені, що хочете видалити "{{ article.title }}"?</p>
+    <form id="form3" method="post">
+        {% csrf_token %}
+        <button id="button3" type="submit">Так, видалити</button>
+    </form>
+    <a id="a3" href="{% url 'article_list' %}">Скасувати</a>
+</div>
+</body>
+</html>

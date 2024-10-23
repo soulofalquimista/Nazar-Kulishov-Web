@@ -1,0 +1,181 @@
+/* Основні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Стилі для заголовків */
+#title1, #title2, #title3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+/* Стилі для списку статей */
+#ul1 {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#li1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#li1:hover {
+    transform: scale(1.02);
+}
+
+#a1 {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 12px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#a1:hover {
+    background-color: #45a049;
+}
+
+#a1_1 {
+    color: #f44336;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#a1_1:hover {
+    color: #d32f2f;
+}
+
+/* Стилі для додавання статті */
+#form2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#button2 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#button2:hover {
+    background-color: #45a049;
+}
+
+#a2 {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+}
+
+#a2:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для видалення статті */
+#p3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#form3 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#button3 {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#button3:hover {
+    background-color: #d32f2f;
+}
+
+#a3 {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+}
+
+#a3:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    #li1 {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    #button2, #button3 {
+        padding: 10px 15px;
+    }
+
+    #title1, #title2, #title3 {
+        font-size: 24px;
+    }
+}

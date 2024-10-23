@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Додати статтю</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}">
+    <style>
+        /* Основні стилі сторінки */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Стилі контейнера */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Стилі заголовка */
+        #title2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        /* Стилі форми */
+        #form2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form p {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        form label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Стилі кнопки */
+        #button2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #button2:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        /* Стилі посилання */
+        #a2 {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        #a2:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Адаптивність для мобільних пристроїв */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            #title2 {
+                font-size: 24px;
+            }
+
+            #button2 {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            #a2 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="title2">Додати статтю</h1>
+    <form id="form2" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="button2" type="submit">Зберегти</button>
+    </form>
+    <a id="a2" href="{% url 'article_list' %}">Назад до списку статей</a>
+</div>
+</body>
+</html>
